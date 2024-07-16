@@ -36,7 +36,7 @@ Due to nontrivial source licences, access to sourcecode will be provided on a pe
 
 ## Wave simulator [gitlab](https://gitlab.phys.ethz.ch/engelerp/framebuffer-testing)
 
-## Simulation framework for system of thousands of coupled resonators [gitlab]()
+## Simulation framework for system of thousands of coupled resonators [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-simulation)
 
 ## Autonomous temperature stabilization system [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-temperature-control)
 
@@ -49,39 +49,40 @@ The ray tracer is parallelized using OpenMP and was run on a cluster (Piz Daint)
 
 **Technologies**: C++, OpenMP, python
 
-## RBComb control system [gitlab](Bridge with RAM only)
+## RBComb control system [gitlab](https://gitlab.phys.ethz.ch/engelerp/bridge_fpga_ram)
 
-## PCB generation framework [gitlab]()
+## PCB generation framework [gitlab](https://gitlab.phys.ethz.ch/code/experiment/rbcomb-breakout)
+Contains classes to represent Kicad pcbs, along with scripts that use these classes to generate different versions of Breakoutboards.
 
-## RBComb sample visualizer [gitlab]()
+## RBComb sample visualizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-sample-visualizer)
 
-## Interactive MEMS resonator design optimizer [gitlab]()
+## Interactive MEMS resonator design optimizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/arm-designer)
 
-## Interactive WLI data analyzer and visualizer [gitlab]()
+## Interactive WLI data analyzer and visualizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/nt1100-analyser)
 
-## Labbook generator [gitlab]()
+## Labbook generator [gitlab](can't, contains private information, but offer to clean up)
 
-## Git diff [gitlab]()
+## Git diff [gitlab](https://gitlab.phys.ethz.ch/engelerp/gitdiff)
 
-## FPGA defined FM transmitter [gitlab]()
+## FPGA defined FM transmitter [gitlab](not online yet)
 
-## FPGA defined soundcard [gitlab]()
+## FPGA defined soundcard [gitlab](not online yet)
 
 ## Fitbit watchface [gitlab]()
 
-## Blackjack multiplayer game [gitlab]()
+## Blackjack multiplayer game [gitlab](only on Synthetic so far)
 
-## Home automation [gitlab]()
+## Home automation [gitlab](not online yet)
 
-## DLSC Projects [gitlab]()
+## DLSC Projects [gitlab](https://gitlab.phys.ethz.ch/engelerp/dlsc-tasks)
 
 ## Automatic lab monitoring
 
 ## Experimental data storage in database
 
-## Foodweb simulations []()
+## Foodweb simulations [gitlab](https://gitlab.phys.ethz.ch/engelerp/Foodwebs)
 
-## Framework for automatic topological structure design []()
+## Framework for automatic topological structure design [](not published yet)
 
 ## Dynamic friction simulation[]()
 
@@ -89,7 +90,7 @@ The ray tracer is parallelized using OpenMP and was run on a cluster (Piz Daint)
 
 ## Gameboy emulator []()
 
-## Switchboard []()
+## Switchboard [](could do, there's 2 or 3 repos involved in this (pcb, api, firmware))
 
 ## Project to automate and optimize study planning for sports research []()
 
