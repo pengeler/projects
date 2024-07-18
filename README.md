@@ -23,8 +23,10 @@ More in-depth information can be found in the project's README.md, and impressio
 <img src="resources/wave_photo_side.jpeg" alt="Wellentisch" width="600"/>
 
 
-# Simulation framework for system of thousands of coupled resonators [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-simulation)
+# Simulation framework for system of thousands of coupled resonators
 **Involved Technologies**: C++, LAPACK, python, Make
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-simulation)
 
 This is a simulation framework made to simulate the system I developed during my PhD, namely a system of 2000 coupled nonlinear resonators.
 
@@ -40,19 +42,50 @@ For timestepping, an RK4 implementation is provided, but custom steppers can be 
 
 # FPGA lock-in amplifier [gitlab](https://gitlab.phys.ethz.ch/engelerp/stitch)
 
-# High performance interference ray tracer [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-ray-tracer)
-The goal of this project was writing a program that can predict interference patterns seen in a microscope, for certain configurations of deformed overlapping thin films. The motivation of this project was sparked by a lack of understanding of observed results in the cleanroom. 
+# High performance interference ray tracer
+**Involved Technologies**: C++, OpenMP, python
 
-The ray tracer is parallelized using OpenMP and was run on a cluster (Piz Daint). As opposed to conventional ray tracers, here rays of several different colours are traced through materials with nontrivial curvatures and refractive indices. The results were able reproduce observations, and guided us in the right direction for the resolution of the observed issues.
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-ray-tracer)
 
-**Technologies**: C++, OpenMP, python
+The goal of this project was writing a program that can predict interference patterns seen in a microscope, for certain configurations of deformed overlapping thin films. 
+The motivation of this project was sparked by a lack of understanding of observed results in the cleanroom. 
 
-# RBComb control system [gitlab](https://gitlab.phys.ethz.ch/engelerp/bridge_fpga_ram)
+The ray tracer is parallelized using OpenMP and was run on a cluster (Piz Daint). 
+As opposed to conventional ray tracers, here rays of several different colours are traced through materials with nontrivial curvatures and refractive indices. 
+The meshes used to describe various surfaces present in the scene were generated leveraging the mesher infrastructure I developed for the Structure Search project. 
 
-# PCB generation framework [gitlab](https://gitlab.phys.ethz.ch/code/experiment/rbcomb-breakout)
-Contains classes to represent Kicad pcbs, along with scripts that use these classes to generate different versions of Breakoutboards.
+The obtained results were able to reproduce observations, and guided us in the right direction for the resolution of the encountered issues.
 
-# RBComb sample visualizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-sample-visualizer)
+
+# RBComb control system
+**Involved Technologies**: VHDL, python
+
+**Link** (partial): [gitlab](https://gitlab.phys.ethz.ch/engelerp/bridge_fpga_ram)
+
+The control system of the RBComb experiment consists of a star network of 11 FPGAs. 
+The hub receives commands from a PC via UART, and programs the other 10 FPGAs correspondingly. 
+It also receives measurement data from an attocube IDS 3010, stores relevant data in LPDDR SDRAM and streams it back to the PC when requested.
+The other 10 FPGAs generate analog voltages on 576 independent channels each, by controlling a total of 720 DACs.
+These voltages are generated according to fully independently programmable sequences, parallelly in well synchronized manner.
+
+The linked repo only shows the gateware flashed on the hub FPGA.
+
+More information about the gateware can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), in the Setup chapter 4, especially 4.5 and 4.6. 
+The python API to communicate with the system is described in chapter 4.4.
+
+# PCB generation framework
+**Involved Technologies**: python
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/code/experiment/rbcomb-breakout)
+
+Contains classes to represent Kicad pcbs, along with scripts that use these classes to generate different versions of Breakoutboards to break out the 5000 analog nets of the RBComb sample.
+
+# RBComb sample visualizer
+**Involved Technologies**: C++, OpenGL, python
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-sample-visualizer)
+
+Meshes are generated in python using the earcut algorithm 
 
 # Interactive MEMS resonator design optimizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/arm-designer)
 
