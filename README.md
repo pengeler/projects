@@ -49,7 +49,7 @@ This system is an exhibit part of the "Wellen - Tauch ein!" exhibition from Focu
 
 More in-depth information can be found in the project's README.md, and impressions of the final device are shown below.
 
-![Wellentisch](resources/wave_photo_side.jpeg)
+<img src="resources/wave_photo_side.jpeg" alt="Wellentisch" width="600"/>
 
 
 ## Simulation framework for system of thousands of coupled resonators [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-simulation)
