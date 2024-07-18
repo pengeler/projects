@@ -1,7 +1,7 @@
 # List of Projects
 The following is a list of projects that I have worked on, along with brief descriptions and involved technologies. 
 
-Due to nontrivial source licences, access to sourcecode will be provided on a per-request basis, where possible.
+Due to various restrictions, source access is only provided for selected projects. I might be able to supply access to other projects on demand.
 
 - [List of Projects](#list-of-projects)
   - [Wave simulator gitlab](#wave-simulator-gitlab)
@@ -34,7 +34,23 @@ Due to nontrivial source licences, access to sourcecode will be provided on a pe
   - [Project to automate address retrieval from web resources ](#project-to-automate-address-retrieval-from-web-resources-)
 
 
-## Wave simulator [gitlab](https://gitlab.phys.ethz.ch/engelerp/framebuffer-testing)
+## Wave simulator
+**Involved Technologies**: C++, OpenGL, GLSL, SDL2, DearImGui
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/framebuffer-testing)
+
+Wave simulator controlled via a multitouch display in real-time.
+
+Plane waves are propagating over the screen, and users can either scatter the waves off their fingers, place preprogrammed obstruction patterns, or draw their own obstructions directly onto the screen. 
+
+The finite difference simulation is performed in real time on an RTX 3080, and in operation the system performs well over 10^10 single site updates per second. 
+
+This system is an exhibit part of the "Wellen - Tauch ein!" exhibition from FocusTerra, which has since also been shown in the Seemuseum Kreuzlingen, and is currently in the HNF Paderborn. 
+
+More in-depth information can be found in the project's README.md, and impressions of the final device are shown below.
+
+![Wellentisch](resources/wave_photo_side.jpeg)
+
 
 ## Simulation framework for system of thousands of coupled resonators [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-simulation)
 
@@ -83,6 +99,8 @@ A video of the device in operation is shown below.
 
 
 ## Fitbit watchface
+**Involved Technologies**: JavaScript, stylesheets
+
 I programmed a watch face for a Fitbit smartwatch. 
 While the the face displays lists all the typical data, it also draws a height trace, which shows how the user's height over sea level changed during the past few hours.
 This functionality was inspired by a Garmin smartwatch.
