@@ -68,6 +68,7 @@ Contains classes to represent Kicad pcbs, along with scripts that use these clas
 
 ## Spartan Sound
 **Involved Technologies**: VHDL, python, electronics
+
 **Link**:  [gitlab](https://gitlab.phys.ethz.ch/engelerp/spartansound)
 
 An FPGA (Spartan 6) defined soundcard. 
