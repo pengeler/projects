@@ -3,36 +3,8 @@ The following is a list of projects that I have worked on, along with brief desc
 
 Due to various restrictions, source access is only provided for selected projects. I might be able to supply access to other projects on demand.
 
-- [List of Projects](#list-of-projects)
-  - [Wave simulator gitlab](#wave-simulator-gitlab)
-  - [Simulation framework for system of thousands of coupled resonators gitlab](#simulation-framework-for-system-of-thousands-of-coupled-resonators-gitlab)
-  - [Autonomous temperature stabilization system gitlab](#autonomous-temperature-stabilization-system-gitlab)
-  - [FPGA lock-in amplifier gitlab](#fpga-lock-in-amplifier-gitlab)
-  - [High performance interference ray tracer gitlab](#high-performance-interference-ray-tracer-gitlab)
-  - [RBComb control system \[gitlab\](Bridge with RAM only)](#rbcomb-control-system-gitlabbridge-with-ram-only)
-  - [PCB generation framework gitlab](#pcb-generation-framework-gitlab)
-  - [RBComb sample visualizer gitlab](#rbcomb-sample-visualizer-gitlab)
-  - [Interactive MEMS resonator design optimizer gitlab](#interactive-mems-resonator-design-optimizer-gitlab)
-  - [Interactive WLI data analyzer and visualizer gitlab](#interactive-wli-data-analyzer-and-visualizer-gitlab)
-  - [Labbook generator gitlab](#labbook-generator-gitlab)
-  - [Git diff gitlab](#git-diff-gitlab)
-  - [FPGA defined FM transmitter gitlab](#fpga-defined-fm-transmitter-gitlab)
-  - [FPGA defined soundcard gitlab](#fpga-defined-soundcard-gitlab)
-  - [Fitbit watchface gitlab](#fitbit-watchface-gitlab)
-  - [Blackjack multiplayer game gitlab](#blackjack-multiplayer-game-gitlab)
-  - [Home automation gitlab](#home-automation-gitlab)
-  - [DLSC Projects gitlab](#dlsc-projects-gitlab)
-  - [Automatic lab monitoring](#automatic-lab-monitoring)
-  - [Experimental data storage in database](#experimental-data-storage-in-database)
-  - [Foodweb simulations ](#foodweb-simulations-)
-  - [Framework for automatic topological structure design ](#framework-for-automatic-topological-structure-design-)
-  - [Dynamic friction simulation](#dynamic-friction-simulation)
-  - [Texas Hold'em probability analysis ](#texas-holdem-probability-analysis-)
-  - [Gameboy emulator ](#gameboy-emulator-)
-  - [Switchboard ](#switchboard-)
-  - [Project to automate and optimize study planning for sports research ](#project-to-automate-and-optimize-study-planning-for-sports-research-)
-  - [Project to automate address retrieval from web resources ](#project-to-automate-address-retrieval-from-web-resources-)
-
+# Table of Contents
+[TOC]
 
 ## Wave simulator
 **Involved Technologies**: C++, OpenGL, GLSL, SDL2, DearImGui
