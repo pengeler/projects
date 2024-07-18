@@ -66,7 +66,10 @@ Contains classes to represent Kicad pcbs, along with scripts that use these clas
 
 ## FPGA defined FM transmitter [gitlab](not online yet)
 
-## Spartan Sound [gitlab](https://gitlab.phys.ethz.ch/engelerp/spartansound)
+## Spartan Sound
+**Involved Technologies**: VHDL, python, electronics
+**Link**:  [gitlab](https://gitlab.phys.ethz.ch/engelerp/spartansound)
+
 An FPGA (Spartan 6) defined soundcard. 
 It receives wave packets via serial, and drives a speaker via a pin by outputting the corresponding voltage through delta-sigma modulation. 
 Continuous playback functionality is enabled by double buffering, one buffer is being played back while new data is being streamed into the other. 
@@ -84,6 +87,7 @@ While the the face displays lists all the typical data, it also draws a height t
 This functionality was inspired by a Garmin smartwatch.
 
 Unfortunately the code was lost when Fitbit Studio was shut down, but an impression of the design in operation is shown below.
+
 <img src="resources/fitbit.jpeg" alt="Fitbit Watchface" width="400"/>
 
 ## Blackjack multiplayer game [gitlab](only on Synthetic so far)
