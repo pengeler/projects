@@ -78,7 +78,13 @@ A video of the device in operation is shown below.
 ![SpartanSoundDemo](resources/SpartanSound.mp4)
 
 
-## Fitbit watchface [gitlab]()
+## Fitbit watchface
+I programmed a watch face for a Fitbit smartwatch. 
+While the the face displays lists all the typical data, it also draws a height trace, which shows how the user's height over sea level changed during the past few hours.
+This functionality was inspired by a Garmin smartwatch.
+
+Unfortunately the code was lost when Fitbit Studio was shut down, but an impression of the design in operation is shown below. 
+![Fitbit Watchface](resources/fitbit.jpeg)
 
 ## Blackjack multiplayer game [gitlab](only on Synthetic so far)
 
