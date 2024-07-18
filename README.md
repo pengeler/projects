@@ -3,7 +3,6 @@ The following is a list of projects that I have worked on, along with brief desc
 
 Due to various restrictions, source access is only provided for selected projects. I might be able to supply access to other projects on demand.
 
-# Table of Contents
 [TOC]
 
 ## Wave simulator
@@ -24,37 +23,37 @@ More in-depth information can be found in the project's README.md, and impressio
 <img src="resources/wave_photo_side.jpeg" alt="Wellentisch" width="600"/>
 
 
-## Simulation framework for system of thousands of coupled resonators [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-simulation)
+# Simulation framework for system of thousands of coupled resonators [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-simulation)
 
-## Autonomous temperature stabilization system [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-temperature-control)
+# Autonomous temperature stabilization system [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-temperature-control)
 
-## FPGA lock-in amplifier [gitlab](https://gitlab.phys.ethz.ch/engelerp/stitch)
+# FPGA lock-in amplifier [gitlab](https://gitlab.phys.ethz.ch/engelerp/stitch)
 
-## High performance interference ray tracer [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-ray-tracer)
+# High performance interference ray tracer [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-ray-tracer)
 The goal of this project was writing a program that can predict interference patterns seen in a microscope, for certain configurations of deformed overlapping thin films. The motivation of this project was sparked by a lack of understanding of observed results in the cleanroom. 
 
 The ray tracer is parallelized using OpenMP and was run on a cluster (Piz Daint). As opposed to conventional ray tracers, here rays of several different colours are traced through materials with nontrivial curvatures and refractive indices. The results were able reproduce observations, and guided us in the right direction for the resolution of the observed issues.
 
 **Technologies**: C++, OpenMP, python
 
-## RBComb control system [gitlab](https://gitlab.phys.ethz.ch/engelerp/bridge_fpga_ram)
+# RBComb control system [gitlab](https://gitlab.phys.ethz.ch/engelerp/bridge_fpga_ram)
 
-## PCB generation framework [gitlab](https://gitlab.phys.ethz.ch/code/experiment/rbcomb-breakout)
+# PCB generation framework [gitlab](https://gitlab.phys.ethz.ch/code/experiment/rbcomb-breakout)
 Contains classes to represent Kicad pcbs, along with scripts that use these classes to generate different versions of Breakoutboards.
 
-## RBComb sample visualizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-sample-visualizer)
+# RBComb sample visualizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-sample-visualizer)
 
-## Interactive MEMS resonator design optimizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/arm-designer)
+# Interactive MEMS resonator design optimizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/arm-designer)
 
-## Interactive WLI data analyzer and visualizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/nt1100-analyser)
+# Interactive WLI data analyzer and visualizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/nt1100-analyser)
 
-## Labbook generator [gitlab](can't, contains private information, but offer to clean up)
+# Labbook generator [gitlab](can't, contains private information, but offer to clean up)
 
-## Git diff [gitlab](https://gitlab.phys.ethz.ch/engelerp/gitdiff)
+# Git diff [gitlab](https://gitlab.phys.ethz.ch/engelerp/gitdiff)
 
-## FPGA defined FM transmitter [gitlab](not online yet)
+# FPGA defined FM transmitter [gitlab](not online yet)
 
-## Spartan Sound
+# Spartan Sound
 **Involved Technologies**: VHDL, python, electronics
 
 **Link**:  [gitlab](https://gitlab.phys.ethz.ch/engelerp/spartansound)
@@ -70,7 +69,7 @@ A video of the device in operation is shown below.
 ![SpartanSoundDemo](resources/SpartanSound.mp4)
 
 
-## Fitbit watchface
+# Fitbit watchface
 **Involved Technologies**: JavaScript, stylesheets
 
 I programmed a watch face for a Fitbit smartwatch. 
@@ -81,28 +80,28 @@ Unfortunately the code was lost when Fitbit Studio was shut down, but an impress
 
 <img src="resources/fitbit.jpeg" alt="Fitbit Watchface" width="400"/>
 
-## Blackjack multiplayer game [gitlab](only on Synthetic so far)
+# Blackjack multiplayer game [gitlab](only on Synthetic so far)
 
-## Home automation [gitlab](not online yet)
+# Home automation [gitlab](not online yet)
 
-## DLSC Projects [gitlab](https://gitlab.phys.ethz.ch/engelerp/dlsc-tasks)
+# DLSC Projects [gitlab](https://gitlab.phys.ethz.ch/engelerp/dlsc-tasks)
 
-## Automatic lab monitoring
+# Automatic lab monitoring
 
-## Experimental data storage in database
+# Experimental data storage in database
 
-## Foodweb simulations [gitlab](https://gitlab.phys.ethz.ch/engelerp/Foodwebs)
+# Foodweb simulations [gitlab](https://gitlab.phys.ethz.ch/engelerp/Foodwebs)
 
-## Framework for automatic topological structure design [](not published yet)
+# Framework for automatic topological structure design [](not published yet)
 
-## Dynamic friction simulation[]()
+# Dynamic friction simulation[]()
 
-## Texas Hold'em probability analysis []()
+# Texas Hold'em probability analysis []()
 
-## Gameboy emulator []()
+# Gameboy emulator []()
 
-## Switchboard [](could do, there's 2 or 3 repos involved in this (pcb, api, firmware))
+# Switchboard [](could do, there's 2 or 3 repos involved in this (pcb, api, firmware))
 
-## Project to automate and optimize study planning for sports research []()
+# Project to automate and optimize study planning for sports research []()
 
-## Project to automate address retrieval from web resources []()
+# Project to automate address retrieval from web resources []()
