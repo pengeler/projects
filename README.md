@@ -66,7 +66,13 @@ Contains classes to represent Kicad pcbs, along with scripts that use these clas
 
 ## FPGA defined FM transmitter [gitlab](not online yet)
 
-## FPGA defined soundcard [gitlab](not online yet)
+## Spartan Sound [gitlab](https://gitlab.phys.ethz.ch/engelerp/spartansound)
+An FPGA (Spartan 6) defined soundcard. 
+It is able to receive wave packets via serial, and drive a speaker via delta-sigma modulation output to a pin. 
+This functionality is enabled by double buffering, one buffer is played back while new data is streamed into the other one. 
+
+The purpose of this project was mainly knowledge discovery pertaining programming the Spartan 6, using BRAM, communicating via serial, and performing delta-sigma modulation on an FPGA.
+
 
 ## Fitbit watchface [gitlab]()
 
