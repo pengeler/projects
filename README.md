@@ -68,14 +68,14 @@ Contains classes to represent Kicad pcbs, along with scripts that use these clas
 
 ## Spartan Sound [gitlab](https://gitlab.phys.ethz.ch/engelerp/spartansound)
 An FPGA (Spartan 6) defined soundcard. 
-It is able to receive wave packets via serial, and drive a speaker via delta-sigma modulation output to a pin. 
-This functionality is enabled by double buffering, one buffer is played back while new data is streamed into the other one. 
+It receives wave packets via serial, and drives a speaker via a pin by outputting the corresponding voltage through delta-sigma modulation. 
+Continuous playback functionality is enabled by double buffering, one buffer is being played back while new data is being streamed into the other. 
 
 The purpose of this project was mainly knowledge discovery pertaining programming the Spartan 6, using BRAM, communicating via serial, and performing delta-sigma modulation on an FPGA.
 
 A video of the device in operation is shown below.
 
-![SpartanSoundDemo](SpartanSound.mp4)
+![SpartanSoundDemo](resources/SpartanSound.mp4)
 
 
 ## Fitbit watchface [gitlab]()
