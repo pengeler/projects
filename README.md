@@ -5,12 +5,12 @@ Due to various restrictions, source access is only provided for selected project
 
 [TOC]
 
-## Wave simulator
+# Wave simulator
 **Involved Technologies**: C++, OpenGL, GLSL, SDL2, DearImGui
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/framebuffer-testing)
 
-Wave simulator controlled via a multitouch display in real-time.
+Wave simulator controlled via a 4K multitouch display in real-time.
 
 Plane waves are propagating over the screen, and users can either scatter the waves off their fingers, place preprogrammed obstruction patterns, or draw their own obstructions directly onto the screen. 
 
@@ -24,6 +24,17 @@ More in-depth information can be found in the project's README.md, and impressio
 
 
 # Simulation framework for system of thousands of coupled resonators [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-simulation)
+**Involved Technologies**: C++, LAPACK, python, Make
+
+This is a simulation framework made to simulate the system I developed during my PhD, namely a system of 2000 coupled nonlinear resonators.
+
+As several different approaches can be taken to represent the system (more theoretical assuming specific couplings, or more physical working with voltages), a lot of flexibility is provided in the definition of forces and the like.
+
+For timestepping, an RK4 implementation is provided, but custom steppers can be plugged in instead.
+
+
+
+
 
 # Autonomous temperature stabilization system [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-temperature-control)
 
