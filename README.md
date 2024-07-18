@@ -18,7 +18,7 @@ The finite difference simulation is performed in real time on an RTX 3080, and i
 
 This system is an exhibit part of the "Wellen - Tauch ein!" exhibition from FocusTerra, which has since also been shown in the Seemuseum Kreuzlingen, and is currently in the HNF Paderborn. 
 
-More in-depth information can be found in the project's README.md, and impressions of the final device are shown below.
+More in-depth information can be found in the linked gitlab's README.md, and an impression of the final device is shown below.
 
 <img src="resources/wave_photo_side.jpeg" alt="Wellentisch" width="600"/>
 
@@ -38,9 +38,45 @@ For timestepping, an RK4 implementation is provided, but custom steppers can be 
 
 
 
-# Autonomous temperature stabilization system [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-temperature-control)
+# Autonomous temperature stabilization system
+**Involved Technologies**: C++, python, mixed-signal PCB design, electronics, PID
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-temperature-control)
+
+This system is controlled by an Atmel SAM3X8E ARM Cortex-M3 as broken out on the Arduino Due. 
+The MCU receives temperature measurements (from an AD7124-4 AFE connected to NTC thermistors) and has the ability to control heating power (via an LTC6992 that PWMs into a buck mode step down voltage converter's MOSFET via a totem pole). 
+All involved PCBs (apart from the Arduino) are custom designed.
+Heaters are made from single side aluminium PCBs with a winding track routing throughout.
+The MCU's configuration can be changed, and temperature readings extracted, via a python interface.
+
+This setup allows the MCU to run a PID loop to stabilize the temperature. 
+The achieved stability measured in the system is 10 mK. 
+
+To avoid runaway conditions, there are independently controlled relays and smart switches placed in the current path, and the system's temperatures are continuously monitored. 
+When monitoring stops, the system shuts down automatically.
+
+More information about this system and photo impressions can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), in chapter 4.7.3. 
 
 # FPGA lock-in amplifier [gitlab](https://gitlab.phys.ethz.ch/engelerp/stitch)
+**Involved Technologies**: VHDL, signal analysis
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/stitch)
+
+This project is work in progress. 
+
+It aims to implement FPGA gateware that can:
+
+- generate excitation signals at frequencies up to 500 kHz
+- receive distance measurements from an attocube IDS3010 interferometric distance measuring system via LVDS-HSSL
+- perform lock-in extraction of the relevant components from the measurements in real time
+
+In one shot, up to 1023 programmable frequencies can be measured, and the excitation signal is ramped adiabatically between the different frequencies. 
+The extracted cos/sin components for each of the requested frequencies is stored in BRAM and can be streamed back to the controlling PC.
+
+Ringup times, dwell times and ramp speeds are individually programmable.
+
+This device will be used to measure delicate topology in an elastic sample (designed using the Structure Search project, and microfabricated by me).
+
 
 # High performance interference ray tracer
 **Involved Technologies**: C++, OpenMP, python
@@ -65,8 +101,9 @@ The obtained results were able to reproduce observations, and guided us in the r
 The control system of the RBComb experiment consists of a star network of 11 FPGAs. 
 The hub receives commands from a PC via UART, and programs the other 10 FPGAs correspondingly. 
 It also receives measurement data from an attocube IDS 3010, stores relevant data in LPDDR SDRAM and streams it back to the PC when requested.
-The other 10 FPGAs generate analog voltages on 576 independent channels each, by controlling a total of 720 DACs.
-These voltages are generated according to fully independently programmable sequences, parallelly in well synchronized manner.
+Each of the other 10 FPGAs generates analog voltages on 576 independent channels, by controlling 72 DACs. 
+In total, the voltages on more than 5000 analog nets are controlled.
+These voltages are generated according to independently programmable sequences, parallelly in well synchronized manner.
 
 The linked repo only shows the gateware flashed on the hub FPGA.
 
@@ -78,14 +115,31 @@ The python API to communicate with the system is described in chapter 4.4.
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/code/experiment/rbcomb-breakout)
 
-Contains classes to represent Kicad pcbs, along with scripts that use these classes to generate different versions of Breakoutboards to break out the 5000 analog nets of the RBComb sample.
+Contains classes to represent Kicad pcbs, along with scripts that use these classes to generate different versions of Breakoutboards to break out the 5000 analog nets of the RBComb sample. 
 
 # RBComb sample visualizer
 **Involved Technologies**: C++, OpenGL, python
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-sample-visualizer)
 
-Meshes are generated in python using the earcut algorithm 
+This program is utility software, used to keep a handle on complex RBComb samples. 
+It can be used to perform some bookkeeping over microfabricated samples, in a visual manner. 
+It also shows various pieces of information about selected objects of interest. 
+
+This program is very useful:
+Each of these samples contains over 2000 resonators and 5000 electrodes. 
+The status of each of these objects should be recorded and tracked, per sample. 
+Furthermore, relating specific electrodes to their representations within the controlling FPGA network facilitates quick experimentation.
+
+The meshes used for rendering were generated in python using the earcut algorithm.
+
+An impression of the program is shown in the movie below.
+
+![RBCombSampleVisualizer](resources/rbcombSampleVisualizer.mp4)
+
+
+
+
 
 # Interactive MEMS resonator design optimizer [gitlab](https://gitlab.phys.ethz.ch/engelerp/arm-designer)
 
@@ -120,7 +174,7 @@ I programmed a watch face for a Fitbit smartwatch.
 While the the face displays lists all the typical data, it also draws a height trace, which shows how the user's height over sea level changed during the past few hours.
 This functionality was inspired by a Garmin smartwatch.
 
-Unfortunately the code was lost when Fitbit Studio was shut down, but an impression of the design in operation is shown below.
+Unfortunately the code was lost when Fitbit Studio was shut down, but an impression of the watchface in operation is shown below.
 
 <img src="resources/fitbit.jpeg" alt="Fitbit Watchface" width="400"/>
 
