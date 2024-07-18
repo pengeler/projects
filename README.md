@@ -74,6 +74,7 @@ This functionality is enabled by double buffering, one buffer is played back whi
 The purpose of this project was mainly knowledge discovery pertaining programming the Spartan 6, using BRAM, communicating via serial, and performing delta-sigma modulation on an FPGA.
 
 A video of the device in operation is shown below.
+
 ![SpartanSoundDemo](SpartanSound.mp4)
 
 
