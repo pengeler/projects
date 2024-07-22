@@ -210,9 +210,7 @@ Very useful when collaborating on latex documents.
 
 
 **Description**:\
-A system that takes analog audio as input via a phone connector, digitizes the input, modulates it onto a carrier and outputs the resulting FM signal on a pin. Even without connecting an antenna to the output, the audio signal can be received with a nearby FM capable radio.
-
-The system consists of an MCU and an FPGA, where the MCU performs the crossover from analog to digital, and the FPGA performs modulation and output.
+A system that takes analog audio as input via a phone connector, digitizes the input via an ADC, modulates it onto a carrier and outputs the resulting FM signal on a pin. Even without connecting an antenna to the output, the audio signal can be received with a nearby FM capable radio. The heart of the system is a MAX10 FPGA.
 
 I built this project in the contex of a digital electronics lecture at ETH.
 
@@ -257,9 +255,23 @@ A multiplayer blackjack game.
 Contains code for both, server and client. The repository contains design specification, requirements specification, and unit tests. 
 This project was built as final project for a software engineering lecture at ETH.
 
-# Home automation [gitlab](not online yet)
+# Home automation 
+**Involved Technologies**: Javascript/HTML/CSS (frontent), python (backend)
 
-# DLSC Projects [gitlab](https://gitlab.phys.ethz.ch/engelerp/dlsc-tasks)
+**Description**:\
+I have installed various smart switches and power meters in my home. 
+These devices are connected to the network, and controlled via a webinterface hosted on a raspberry pi. 
+A telegram bot functions as secondary interface.
+
+# DLSC Projects
+**Involved Technologies**: python, Keras, pyTorch
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/dlsc-tasks)
+
+**Description**:\
+In the context of the Deep Learning in Scientific Computing lecture at ETH, I performed several projects. 
+They involved noisy function approximation, time series forecasting, high-dimensional learning, design optimization, PINNs. 
+
 
 # Automatic lab monitoring
 
