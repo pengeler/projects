@@ -218,7 +218,13 @@ Unfortunately the code was lost when Fitbit Studio was shut down, but an impress
 
 <img src="resources/fitbit.jpeg" alt="Fitbit Watchface" width="400"/>
 
-# Blackjack multiplayer game [gitlab](only on Synthetic so far)
+# Blackjack multiplayer game
+**Involved Technologies**: C++, CMake, requirements engineering
+
+A multiplayer blackjack game. 
+
+Contains code for both, server and client. The repository contains design specification, requirements specification, and unit tests. 
+This project was built as final project for a software engineering lecture at ETH.
 
 # Home automation [gitlab](not online yet)
 
