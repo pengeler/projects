@@ -290,5 +290,16 @@ They involved noisy function approximation, time series forecasting, high-dimens
 # Switchboard [](could do, there's 2 or 3 repos involved in this (pcb, api, firmware))
 
 # Project to automate and optimize study planning for sports research []()
+**Involved Technologies**: C++, VBA
+
+**Description**:\
+In this project I helped a research group optimize their study planning. 
+As the subjects of this research are professional athletes, optimizing the necessary time is crucial. 
+I helped create a program that automatically generates study schedules for various input parameters and restrictions, and lowers time requirements significantly compared to manually created time tables.
 
 # Project to automate address retrieval from web resources []()
+**Involved Technologies**: python
+
+**Description**:\
+I automated the retrieval of addresses from web resources, which are necessary for database maintenance. 
+Usage of my tool cut the database maintenance time by over 95 %.
