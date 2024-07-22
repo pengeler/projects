@@ -238,7 +238,7 @@ A video of the device in operation is shown below.
 
 **Description**:\
 I programmed a watch face for a Fitbit smartwatch. 
-While the the face displays lists all the typical data, it also draws a height trace, which shows how the user's height over sea level changed during the past few hours.
+While the face displays all the typical data, it also draws a height trace, which shows how the user's height over sea level changed during the past few hours.
 This functionality was inspired by a Garmin smartwatch.
 
 Unfortunately the code was lost when Fitbit Studio was shut down, but an impression of the watchface in operation is shown below.
@@ -301,5 +301,5 @@ I helped create a program that automatically generates study schedules for vario
 **Involved Technologies**: python
 
 **Description**:\
-I automated the retrieval of addresses from web resources, which are necessary for database maintenance. 
-Usage of my tool cut the database maintenance time by over 95 %.
+I automated the retrieval of addresses from web resources, which are necessary database contents current. 
+Usage of my tool cut the database maintenance time by over 99 %.
