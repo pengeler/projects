@@ -274,6 +274,14 @@ They involved noisy function approximation, time series forecasting, high-dimens
 
 
 # Automatic lab monitoring
+**Involved Technologies**: python, InfluxDB, grafana
+
+**Description**:\
+I have set up automatic data logging and monitoring for the cmt-mm laboratory. 
+This involves periodically connecting to various devices, reading their sensor values, and writing them into an InfluxDB database. 
+This data is then visualized in a grafana dashboard. 
+
+Critical data states also trigger warning messages in a dedicated Element channel, and effect automatic shutdowns when deemed necessary.
 
 # Experimental data storage in database
 
