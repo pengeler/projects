@@ -279,7 +279,17 @@ They involved noisy function approximation, time series forecasting, high-dimens
 
 # Foodweb simulations [gitlab](https://gitlab.phys.ethz.ch/engelerp/Foodwebs)
 
-# Framework for automatic topological structure design [](not published yet)
+# Framework for automatic topological structure design
+**Involved Technologies**: python, finite elements, CMA-ES
+
+**Description**:\
+This project constitutes a design suite that has the ability to automatically design topological materials. 
+It is a collaboration of various members from the cmt-mm group. 
+My contribution was developing a custom symmetry preserving mesher, developing the initial functional prototype, and consulting on questions pertaining software design decisions, version control, and optimization.
+
+As this project is yet to be published, code can not be shared. 
+More information can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), chapter 6.
+
 
 # Dynamic friction simulation[]()
 
