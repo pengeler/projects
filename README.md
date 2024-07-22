@@ -219,7 +219,7 @@ Unfortunately the code was lost when Fitbit Studio was shut down, but an impress
 <img src="resources/fitbit.jpeg" alt="Fitbit Watchface" width="400"/>
 
 # Blackjack multiplayer game
-**Involved Technologies**: C++, CMake, requirements engineering
+**Involved Technologies**: C++, CMake, wxWidgets, requirements engineering
 
 A multiplayer blackjack game. 
 
