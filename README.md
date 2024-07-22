@@ -182,7 +182,14 @@ A script to generate a compiled latexdiff file from different git commits.
 
 Very useful when collaborating on latex documents.
 
-# FPGA defined FM transmitter [gitlab](not online yet)
+# FPGA defined FM transmitter
+**Involved Technologies**: VHDL, C, embedded systems, telecommunications
+
+A system that takes analog audio as input via a phone connector, digitizes the input, modulates it onto a carrier and outputs the resulting FM signal on a pin. Even without connecting an antenna to the output, the audio signal can be received with a nearby FM capable radio.
+
+The system consists of an MCU and an FPGA, where the MCU performs the crossover from analog to digital, and the FPGA performs modulation and output.
+
+I built this project in the contex of a digital electronics lecture at ETH.
 
 # Spartan Sound
 **Involved Technologies**: VHDL, python, electronics
