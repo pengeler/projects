@@ -319,6 +319,14 @@ Currently, it can perform a boot sequence, and execute code read from a cartridg
 There is no video or audio output capability as of now.
 
 # Switchboard [](could do, there's 2 or 3 repos involved in this (pcb, api, firmware))
+**Involved Technologies**: C++, python, PCB design
+
+**Links**: [PCB gitlab](https://gitlab.phys.ethz.ch/engelerp/owli), [Firmware gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_firmware), [Driver gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_driver)
+
+**Description**:\
+Multiplexer that selects from 50 analog channels, used for an acoustics experiment. 
+Used via a python interface, controlled by an arduino.
+
 
 # Project to automate and optimize study planning for sports research []()
 **Involved Technologies**: C++, VBA
