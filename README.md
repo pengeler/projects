@@ -283,9 +283,22 @@ They involved noisy function approximation, time series forecasting, high-dimens
 
 # Dynamic friction simulation[]()
 
-# Texas Hold'em probability analysis []()
+# Texas Hold'em probability analysis
+**Involved Technologies**: C++, OpenMP
 
-# Gameboy emulator []()
+**Description**:\
+CLI program that outputs in real time various statistics about an ongoing game of texas hold'em poker. 
+Most importantly, it shows the user's current winning probability and the strongest possible pocket cards, as determined from the currently available information. 
+
+# Gameboy emulator
+**Involved Technologies**: C++
+
+**Description**:\
+This project is work in progress. 
+
+I have started work on a Nintendo Gameboy emulator, to learn how such systems can be built. 
+Currently, it can perform a boot sequence, and execute code read from a cartridge. 
+There is no video or audio output capability as of now.
 
 # Switchboard [](could do, there's 2 or 3 repos involved in this (pcb, api, firmware))
 
