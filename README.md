@@ -1,11 +1,14 @@
 # List of Projects
 The following is a list of projects that I have worked on, along with brief descriptions and involved technologies. 
+The projects are grouped into the following categories: High performance, Hardware / Gateware / Embedded, Utility, and Other. 
+But it should be noted that most projects belong to several of these groups.
 
 Due to various restrictions, source access is only provided for selected projects. I might be able to supply access to other projects on demand.
 
 [TOC]
+# High Performance
 
-# Wave simulator
+## Wave simulator
 **Involved Technologies**: C++, OpenGL, GLSL, SDL2, DearImGui
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/framebuffer-testing)
@@ -25,7 +28,7 @@ More in-depth information can be found in the linked gitlab's README.md, and an 
 <img src="resources/wave_photo_side.jpeg" alt="Wellentisch" width="600"/>
 
 
-# Simulation framework for system of thousands of coupled resonators
+## Simulation framework for system of thousands of coupled resonators
 **Involved Technologies**: C++, LAPACK, python, Make
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-simulation)
@@ -38,11 +41,59 @@ As several different approaches can be taken to represent the system (more theor
 
 For timestepping, an RK4 implementation is provided, but custom steppers can be plugged in instead.
 
+## High performance interference ray tracer
+**Involved Technologies**: C++, OpenMP, python
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-ray-tracer)
+
+
+**Description**:\
+The goal of this project was writing a program that can predict interference patterns seen in a microscope, for certain configurations of deformed overlapping thin films. 
+The motivation of this project was sparked by a lack of understanding of observed results in the cleanroom. 
+
+The ray tracer is parallelized using OpenMP and was run on a cluster (Piz Daint). 
+As opposed to conventional ray tracers, here rays of several different colours are traced through materials with nontrivial curvatures and refractive indices. 
+The meshes used to describe various surfaces present in the scene were generated leveraging the mesher infrastructure I developed for the Structure Search project. 
+
+The obtained results were able to reproduce observations, and guided us in the right direction for the resolution of the encountered issues.
+
+## Software package for automatic topological structure design
+**Involved Technologies**: python, finite elements, CMA-ES
+
+**Description**:\
+This project constitutes a design suite that has the ability to automatically design topological materials. 
+It is a collaboration of various members from the cmt-mm group. 
+My contribution was developing a custom symmetry preserving mesher, developing the initial functional prototype, and consulting on questions pertaining software design decisions, version control, and optimization. 
+In operation, the code is run on supercomputers.
+
+As this project is yet to be published, code can not be shared. 
+More information can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), chapter 6.
+
+## Texas Hold'em probability analysis
+**Involved Technologies**: C++, OpenMP
+
+**Description**:\
+CLI program that outputs in real time various statistics about an ongoing game of texas hold'em poker. 
+Most importantly, it shows the user's current winning probability and the strongest possible pocket cards, as determined from the currently available information. 
+
+
+## Foodweb simulations
+**Involved Technologies**: C++
+
+**Description**\
+Collection of foodweb simulations. This involved numerically solving equations on arbitrary graphs, and investigating when chaotic behaviour becomes stable via bifurcations. 
+The goal was writing a code that could reproduce results reported in a paper, which was achieved.
+
+This project was carried out in the framework of a semester thesis under supervision of Mauro Iazzi and Matthias Troyer.
 
 
 
 
-# Autonomous temperature stabilization system
+
+
+# Hardware / Gateware / Embedded
+
+## Autonomous temperature stabilization system
 **Involved Technologies**: C++, python, mixed-signal PCB design, electronics, PID
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-temperature-control)
@@ -67,7 +118,26 @@ An impression of some components of the system is shown below.
 
 <img src="resources/temperatureControl.jpeg" alt="Temperature Control" width="400"/>
 
-# FPGA lock-in amplifier
+## RBComb control system
+**Involved Technologies**: VHDL, python
+
+**Link** (partial): [gitlab](https://gitlab.phys.ethz.ch/engelerp/bridge_fpga_ram)
+
+
+**Description**:\
+The control system of the RBComb experiment consists of a star network of 11 FPGAs. 
+The hub receives commands from a PC via UART, and programs the other 10 FPGAs correspondingly. 
+It also receives measurement data from an attocube IDS 3010, stores relevant data in LPDDR SDRAM and streams it back to the PC when requested.
+Each of the other 10 FPGAs generates analog voltages on 576 independent channels, by controlling 72 DACs. 
+In total, the voltages on more than 5000 analog nets are controlled.
+These voltages are generated according to independently programmable sequences, parallelly in well synchronized manner.
+
+The linked repo only shows the gateware flashed on the hub FPGA.
+
+More information about the gateware can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), in the Setup chapter 4, especially 4.5 and 4.6. 
+The python API to communicate with the system is described in chapter 4.4.
+
+## FPGA lock-in amplifier
 **Involved Technologies**: VHDL, signal analysis
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/stitch)
@@ -89,25 +159,53 @@ Ringup times, dwell times and ramp speeds are individually programmable.
 
 This device will be used to measure delicate topology in an elastic sample (designed using the Structure Search project, and microfabricated by me).
 
-
-# High performance interference ray tracer
-**Involved Technologies**: C++, OpenMP, python
-
-**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-ray-tracer)
+## FPGA defined FM transmitter
+**Involved Technologies**: VHDL, C, embedded systems, telecommunications
 
 
 **Description**:\
-The goal of this project was writing a program that can predict interference patterns seen in a microscope, for certain configurations of deformed overlapping thin films. 
-The motivation of this project was sparked by a lack of understanding of observed results in the cleanroom. 
+A system that takes analog audio as input via a phone connector, digitizes the input via an ADC, modulates it onto a carrier and outputs the resulting FM signal on a pin. Even without connecting an antenna to the output, the audio signal can be received with a nearby FM capable radio. The heart of the system is a MAX10 FPGA.
 
-The ray tracer is parallelized using OpenMP and was run on a cluster (Piz Daint). 
-As opposed to conventional ray tracers, here rays of several different colours are traced through materials with nontrivial curvatures and refractive indices. 
-The meshes used to describe various surfaces present in the scene were generated leveraging the mesher infrastructure I developed for the Structure Search project. 
+I built this project in the contex of a digital electronics lecture at ETH.
 
-The obtained results were able to reproduce observations, and guided us in the right direction for the resolution of the encountered issues.
+## Spartan Sound
+**Involved Technologies**: VHDL, python, electronics
+
+**Link**:  [gitlab](https://gitlab.phys.ethz.ch/engelerp/spartansound)
 
 
-# Interactive WLI data analyzer and visualizer
+**Description**:\
+An FPGA (Spartan 6) defined soundcard. 
+It receives wave packets via serial, and drives a speaker via a pin by outputting the corresponding voltage through delta-sigma modulation. 
+Continuous playback functionality is enabled by double buffering, one buffer is being played back while new data is being streamed into the other. 
+
+The purpose of this project was mainly knowledge discovery pertaining programming the Spartan 6, using BRAM, communicating via serial, and performing delta-sigma modulation on an FPGA.
+
+A video of the device in operation is shown below.
+
+![SpartanSoundDemo](resources/SpartanSound.mp4)
+
+## Switchboard
+**Involved Technologies**: C++, python, PCB design
+
+**Links**: [PCB gitlab](https://gitlab.phys.ethz.ch/engelerp/owli), [Firmware gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_firmware), [Driver gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_driver)
+
+**Description**:\
+Multiplexer that selects from 50 analog channels, used for an acoustics experiment. 
+Used via a python interface, controlled by an arduino. 
+An impression of the wired up system is shown below. 
+
+<img src="resources/switchboard.jpeg" alt="Wellentisch" width="600"/>
+
+
+
+
+
+
+
+# Utility
+
+## Interactive WLI data analyzer and visualizer
 **Involved Technologies**: C++, OpenGL, GLSL
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/nt1100-analyser)
@@ -120,37 +218,7 @@ An impression of its usage is shown below.
 
 ![nt1100Analyzer](resources/nt1100Analyzer.mp4)
 
-
-
-# RBComb control system
-**Involved Technologies**: VHDL, python
-
-**Link** (partial): [gitlab](https://gitlab.phys.ethz.ch/engelerp/bridge_fpga_ram)
-
-
-**Description**:\
-The control system of the RBComb experiment consists of a star network of 11 FPGAs. 
-The hub receives commands from a PC via UART, and programs the other 10 FPGAs correspondingly. 
-It also receives measurement data from an attocube IDS 3010, stores relevant data in LPDDR SDRAM and streams it back to the PC when requested.
-Each of the other 10 FPGAs generates analog voltages on 576 independent channels, by controlling 72 DACs. 
-In total, the voltages on more than 5000 analog nets are controlled.
-These voltages are generated according to independently programmable sequences, parallelly in well synchronized manner.
-
-The linked repo only shows the gateware flashed on the hub FPGA.
-
-More information about the gateware can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), in the Setup chapter 4, especially 4.5 and 4.6. 
-The python API to communicate with the system is described in chapter 4.4.
-
-# PCB generation framework
-**Involved Technologies**: python
-
-**Link**: [gitlab](https://gitlab.phys.ethz.ch/code/experiment/rbcomb-breakout)
-
-
-**Description**:\
-Contains classes to represent Kicad pcbs, along with scripts that use these classes to generate different versions of Breakoutboards to break out the 5000 analog nets of the RBComb sample. 
-
-# RBComb sample visualizer
+## RBComb sample visualizer
 **Involved Technologies**: C++, OpenGL, GLSL, python
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-sample-visualizer)
@@ -172,8 +240,7 @@ An impression of the program is shown in the movie below.
 
 ![RBCombSampleVisualizer](resources/rbcombSampleVisualizer.mp4)
 
-
-# Interactive MEMS resonator design optimizer
+## Interactive MEMS resonator design optimizer
 **Involved Technologies**: C++, OpenGL, GLSL
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/arm-designer)
@@ -186,114 +253,8 @@ The program is geared towards the type of resonator I developed in my PhD thesis
 An impression of the program is shown below. 
 
 ![ArmDesigner](resources/armDesigner.mp4)
-# Labbook generator
-**Involved Technologies**: python, latex, bash, atom grammar, git, CI/CD pipeline
 
-
-**Description**:\
-In this project, I created a simple custom language that contains the necessary commands to write a labbook (titles, paragraphs, inserting images, inserting corrections, etc.). 
-I also created a corresponding Atom grammar to get syntax highlighting, and added some utility macros. 
-
-When a labbook is pushed to this repo, a CI/CD pipeline executes on a raspberry pi I installed as gitlab runner, which parses the labbook code, translates it to latex, and compiles that to a pdf. 
-
-The repo contains sensitive information and is therefore not fit for sharing. 
-Upon request I may prepare a clean version.
-
-# Git diff
-**Involved Technologies**: bash, git
-
-**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/gitdiff)
-
-
-**Description**:\
-A script to generate a compiled latexdiff file from different git commits.
-
-Very useful when collaborating on latex documents.
-
-# FPGA defined FM transmitter
-**Involved Technologies**: VHDL, C, embedded systems, telecommunications
-
-
-**Description**:\
-A system that takes analog audio as input via a phone connector, digitizes the input via an ADC, modulates it onto a carrier and outputs the resulting FM signal on a pin. Even without connecting an antenna to the output, the audio signal can be received with a nearby FM capable radio. The heart of the system is a MAX10 FPGA.
-
-I built this project in the contex of a digital electronics lecture at ETH.
-
-# Spartan Sound
-**Involved Technologies**: VHDL, python, electronics
-
-**Link**:  [gitlab](https://gitlab.phys.ethz.ch/engelerp/spartansound)
-
-
-**Description**:\
-An FPGA (Spartan 6) defined soundcard. 
-It receives wave packets via serial, and drives a speaker via a pin by outputting the corresponding voltage through delta-sigma modulation. 
-Continuous playback functionality is enabled by double buffering, one buffer is being played back while new data is being streamed into the other. 
-
-The purpose of this project was mainly knowledge discovery pertaining programming the Spartan 6, using BRAM, communicating via serial, and performing delta-sigma modulation on an FPGA.
-
-A video of the device in operation is shown below.
-
-![SpartanSoundDemo](resources/SpartanSound.mp4)
-
-
-# Fitbit watchface
-**Involved Technologies**: JavaScript, stylesheets
-
-
-**Description**:\
-I programmed a watch face for a Fitbit smartwatch. 
-While the face displays all the typical data, it also draws a height trace, which shows how the user's height over sea level changed during the past few hours.
-This functionality was inspired by a Garmin smartwatch.
-
-Unfortunately the code was lost when Fitbit Studio was shut down, but an impression of the watchface in operation is shown below.
-
-<img src="resources/fitbit.jpeg" alt="Fitbit Watchface" width="400"/>
-
-# Blackjack multiplayer game
-**Involved Technologies**: C++, CMake, wxWidgets, requirements engineering
-
-
-**Description**:\
-A multiplayer blackjack game. 
-
-Contains code for both, server and client. The repository contains design specification, requirements specification, and unit tests. 
-This project was built as final project for a software engineering lecture at ETH.
-
-# Software package for automatic topological structure design
-**Involved Technologies**: python, finite elements, CMA-ES
-
-**Description**:\
-This project constitutes a design suite that has the ability to automatically design topological materials. 
-It is a collaboration of various members from the cmt-mm group. 
-My contribution was developing a custom symmetry preserving mesher, developing the initial functional prototype, and consulting on questions pertaining software design decisions, version control, and optimization.
-
-As this project is yet to be published, code can not be shared. 
-More information can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), chapter 6.
-
-# Automatic lab monitoring
-**Involved Technologies**: python, InfluxDB, grafana
-
-**Description**:\
-I have set up automatic data logging and monitoring for the cmt-mm laboratory. 
-This involves periodically connecting to various devices, reading their sensor values, and writing them into an InfluxDB database. 
-This data is then visualized in a grafana dashboard. 
-
-Critical data states also trigger warning messages in a dedicated Element channel, and effect automatic shutdowns when deemed necessary.
-
-# Switchboard
-**Involved Technologies**: C++, python, PCB design
-
-**Links**: [PCB gitlab](https://gitlab.phys.ethz.ch/engelerp/owli), [Firmware gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_firmware), [Driver gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_driver)
-
-**Description**:\
-Multiplexer that selects from 50 analog channels, used for an acoustics experiment. 
-Used via a python interface, controlled by an arduino. 
-An impression of the wired up system is shown below. 
-
-<img src="resources/switchboard.jpeg" alt="Wellentisch" width="600"/>
-
-# Home automation 
+## Home automation 
 **Involved Technologies**: Javascript/HTML/CSS (frontend), python (backend)
 
 **Description**:\
@@ -305,25 +266,96 @@ A screenshot of the interface is shown below.
 
 <img src="resources/smartswitch_interface.png" alt="Smartswitch Webinterface" width="400"/>
 
-# Foodweb simulations
-**Involved Technologies**: C++
+## Automatic lab monitoring
+**Involved Technologies**: python, InfluxDB, grafana
 
-**Description**\
-Collection of foodweb simulations. This involved numerically solving equations on arbitrary graphs, and investigating when chaotic behaviour becomes stable via bifurcations. 
-The goal was writing a code that could reproduce results reported in a paper, which was achieved.
+**Description**:\
+I have set up automatic data logging and monitoring for the cmt-mm laboratory. 
+This involves periodically connecting to various devices, reading their sensor values, and writing them into an InfluxDB database. 
+This data is then visualized in a grafana dashboard. 
 
-This project was carried out in the framework of a semester thesis under supervision of Mauro Iazzi and Matthias Troyer.
+Critical data states also trigger warning messages in a dedicated Element channel, and effect automatic shutdowns when deemed necessary.
 
-# DLSC Projects
+## Git diff
+**Involved Technologies**: bash, git
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/gitdiff)
+
+**Description**:\
+A script to generate a compiled latexdiff file from different git commits.
+
+Very useful when collaborating on latex documents.
+
+## Labbook generator
+**Involved Technologies**: python, latex, bash, atom grammar, git, CI/CD pipeline
+
+**Description**:\
+In this project, I created a simple custom language that contains the necessary commands to write a labbook (titles, paragraphs, inserting images, inserting corrections, etc.). 
+I also created a corresponding Atom grammar to get syntax highlighting, and added some utility macros. 
+
+When a labbook is pushed to this repo, a CI/CD pipeline executes on a raspberry pi I installed as gitlab runner, which parses the labbook code, translates it to latex, and compiles that to a pdf. 
+
+The repo contains sensitive information and is therefore not fit for sharing. 
+Upon request I may prepare a clean version.
+
+## PCB generation framework
+**Involved Technologies**: python
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/code/experiment/rbcomb-breakout)
+
+**Description**:\
+Contains classes to represent Kicad pcbs, along with scripts that use these classes to generate different versions of Breakoutboards to break out the 5000 analog nets of the RBComb sample. 
+
+## Project to automate and optimize study planning for sports research
+**Involved Technologies**: C++, VBA
+
+**Description**:\
+In this project I helped a research group optimize their study planning. 
+As the subjects of this research are professional athletes, optimizing the necessary time is crucial. 
+I helped create a program that automatically generates study schedules for various input parameters and restrictions, and lowers time requirements significantly compared to manually created time tables.
+
+## Project to automate address retrieval from web resources
+**Involved Technologies**: python
+
+**Description**:\
+I automated the retrieval of addresses from web resources, which are necessary to keep database contents current. 
+Usage of my tool cut the database maintenance time by over 99 %.
+
+
+
+
+
+# Other
+
+## Fitbit watchface
+**Involved Technologies**: JavaScript, CSS
+
+**Description**:\
+I programmed a watch face for a Fitbit smartwatch. 
+While the face displays all the typical data, it also draws a height trace, which shows how the user's height over sea level changed during the past few hours.
+This functionality was inspired by a Garmin smartwatch.
+
+Unfortunately the code was lost when Fitbit Studio was shut down, but an impression of the watchface in operation is shown below.
+
+<img src="resources/fitbit.jpeg" alt="Fitbit Watchface" width="400"/>
+
+## Blackjack multiplayer game
+**Involved Technologies**: C++, CMake, wxWidgets, requirements engineering
+
+**Description**:\
+A multiplayer blackjack game. 
+
+Contains code for both, server and client. The repository contains design specification, requirements specification, and unit tests. 
+This project was built as final project for a software engineering lecture at ETH.
+
+## DLSC Projects
 **Involved Technologies**: python, Keras, pyTorch
-
-**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/dlsc-tasks)
 
 **Description**:\
 In the context of the Deep Learning in Scientific Computing lecture at ETH, I performed several projects. 
-They involved noisy function approximation, time series forecasting, high-dimensional learning, design optimization, PINNs. 
+They involved noisy function approximation, time series forecasting, high-dimensional learning, design optimization, and PINNs. 
 
-# Gameboy emulator
+## Gameboy emulator
 **Involved Technologies**: C++
 
 **Description**:\
@@ -333,25 +365,5 @@ I have started work on a Nintendo Gameboy emulator, to learn how such systems ca
 Currently, it can perform a boot sequence, and execute code read from a cartridge. 
 There is no video or audio output capability as of now.
 
-# Texas Hold'em probability analysis
-**Involved Technologies**: C++, OpenMP
-
-**Description**:\
-CLI program that outputs in real time various statistics about an ongoing game of texas hold'em poker. 
-Most importantly, it shows the user's current winning probability and the strongest possible pocket cards, as determined from the currently available information. 
 
 
-# Project to automate and optimize study planning for sports research []()
-**Involved Technologies**: C++, VBA
-
-**Description**:\
-In this project I helped a research group optimize their study planning. 
-As the subjects of this research are professional athletes, optimizing the necessary time is crucial. 
-I helped create a program that automatically generates study schedules for various input parameters and restrictions, and lowers time requirements significantly compared to manually created time tables.
-
-# Project to automate address retrieval from web resources []()
-**Involved Technologies**: python
-
-**Description**:\
-I automated the retrieval of addresses from web resources, which are necessary to keep database contents current. 
-Usage of my tool cut the database maintenance time by over 99 %.
