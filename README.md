@@ -29,7 +29,7 @@ More in-depth information can be found in the linked gitlab's README.md, and an 
 
 
 ## Simulation framework for system of thousands of coupled resonators
-**Involved Technologies**: C++, LAPACK, python, Make
+**Involved Technologies**: C++, LAPACK, Python, Make
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-simulation)
 
@@ -42,7 +42,7 @@ As several different approaches can be taken to represent the system (more theor
 For timestepping, an RK4 implementation is provided, but custom steppers can be plugged in instead.
 
 ## High performance interference ray tracer
-**Involved Technologies**: C++, OpenMP, python
+**Involved Technologies**: C++, OpenMP, Python
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-ray-tracer)
 
@@ -58,7 +58,7 @@ The meshes used to describe various surfaces present in the scene were generated
 The obtained results were able to reproduce observations, and guided us in the right direction for the resolution of the encountered issues.
 
 ## Structure Search: Automatic topological structure design
-**Involved Technologies**: python, finite elements, CMA-ES
+**Involved Technologies**: Python, finite elements, CMA-ES
 
 **Description**:\
 This project constitutes a design suite that has the ability to automatically design topological materials. 
@@ -94,7 +94,7 @@ This project was carried out in the framework of a semester thesis under supervi
 # Hardware / Gateware / Embedded
 
 ## Autonomous temperature stabilization system
-**Involved Technologies**: C++, python, mixed-signal PCB design, electronics, PID
+**Involved Technologies**: C++, Python, mixed-signal PCB design, electronics, PID
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-temperature-control)
 
@@ -104,7 +104,7 @@ This system is controlled by an Atmel SAM3X8E ARM Cortex-M3 as broken out on the
 The MCU receives temperature measurements (from an AD7124-4 AFE connected to NTC thermistors) and has the ability to control heating power (via an LTC6992 that PWMs into a buck mode step down voltage converter's MOSFET via a totem pole). 
 All involved PCBs (apart from the Arduino) are custom designed.
 Heaters are made from single side aluminium PCBs with a winding track routing throughout.
-The MCU's configuration can be changed, and temperature readings extracted, via a python interface.
+The MCU's configuration can be changed, and temperature readings extracted, via a Python interface.
 
 This setup allows the MCU to run a PID loop to stabilize the temperature. 
 The achieved stability measured in the system is 10 mK. 
@@ -119,7 +119,7 @@ An impression of some components of the system is shown below.
 <img src="resources/temperatureControl.jpeg" alt="Temperature Control" width="400"/>
 
 ## RBComb control system
-**Involved Technologies**: VHDL, python
+**Involved Technologies**: VHDL, Python
 
 **Link** (partial): [gitlab](https://gitlab.phys.ethz.ch/engelerp/bridge_fpga_ram)
 
@@ -135,7 +135,7 @@ These voltages are generated according to independently programmable sequences, 
 The linked repo only shows the gateware flashed on the hub FPGA.
 
 More information about the gateware can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), in the Setup chapter 4, especially 4.5 and 4.6. 
-The python API to communicate with the system is described in chapter 4.4.
+The Python API to communicate with the system is described in chapter 4.4.
 
 ## FPGA lock-in amplifier
 **Involved Technologies**: VHDL, signal analysis
@@ -169,7 +169,7 @@ A system that takes analog audio as input via a phone connector, digitizes the i
 I built this project in the contex of a digital electronics lecture at ETH.
 
 ## Spartan Sound
-**Involved Technologies**: VHDL, python, electronics
+**Involved Technologies**: VHDL, Python, electronics
 
 **Link**:  [gitlab](https://gitlab.phys.ethz.ch/engelerp/spartansound)
 
@@ -186,13 +186,13 @@ A video of the device in operation is shown below.
 ![SpartanSoundDemo](resources/SpartanSound.mp4)
 
 ## Switchboard
-**Involved Technologies**: C++, python, PCB design
+**Involved Technologies**: C++, Python, PCB design
 
 **Links**: [PCB gitlab](https://gitlab.phys.ethz.ch/engelerp/owli), [Firmware gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_firmware), [Driver gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_driver)
 
 **Description**:\
 Multiplexer that selects from 50 analog channels, used for an acoustics experiment. 
-Used via a python interface, controlled by an arduino. 
+Used via a Python interface, controlled by an arduino. 
 An impression of the wired up system is shown below. 
 
 <img src="resources/switchboard.jpeg" alt="Wellentisch" width="600"/>
@@ -219,7 +219,7 @@ An impression of its usage is shown below.
 ![nt1100Analyzer](resources/nt1100Analyzer.mp4)
 
 ## RBComb sample visualizer
-**Involved Technologies**: C++, OpenGL, GLSL, python
+**Involved Technologies**: C++, OpenGL, GLSL, Python
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/rbcomb-sample-visualizer)
 
@@ -234,7 +234,7 @@ Each of these samples contains over 2000 resonators and 5000 electrodes.
 The status of each of these objects should be recorded and tracked, per sample. 
 Furthermore, relating specific electrodes to their representations within the controlling FPGA network facilitates quick experimentation.
 
-The meshes used for rendering were generated in python using the earcut algorithm.
+The meshes used for rendering were generated in Python using the earcut algorithm.
 
 An impression of the program is shown in the movie below.
 
@@ -255,7 +255,7 @@ An impression of the program is shown below.
 ![ArmDesigner](resources/armDesigner.mp4)
 
 ## Home automation 
-**Involved Technologies**: Javascript/HTML/CSS (frontend), python (backend)
+**Involved Technologies**: Javascript/HTML/CSS (frontend), Python (backend)
 
 **Description**:\
 I have installed various smart switches and power meters in my home. 
@@ -267,7 +267,7 @@ A screenshot of the interface is shown below.
 <img src="resources/smartswitch_interface.png" alt="Smartswitch Webinterface" width="400"/>
 
 ## Automatic lab monitoring
-**Involved Technologies**: python, InfluxDB, grafana
+**Involved Technologies**: Python, InfluxDB, grafana
 
 **Description**:\
 I have set up automatic data logging and monitoring for the cmt-mm laboratory. 
@@ -287,7 +287,7 @@ A script to generate a compiled latexdiff file from different git commits.
 Very useful when collaborating on latex documents.
 
 ## Labbook generator
-**Involved Technologies**: python, latex, bash, atom grammar, git, CI/CD pipeline
+**Involved Technologies**: Python, latex, bash, atom grammar, git, CI/CD pipeline
 
 **Description**:\
 In this project, I created a simple custom language that contains the necessary commands to write a labbook (titles, paragraphs, inserting images, inserting corrections, etc.). 
@@ -299,7 +299,7 @@ The repo contains sensitive information and is therefore not fit for sharing.
 Upon request I may prepare a clean version.
 
 ## PCB generation framework
-**Involved Technologies**: python
+**Involved Technologies**: Python
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/code/experiment/rbcomb-breakout)
 
@@ -315,7 +315,7 @@ As the subjects of this research are professional athletes, optimizing the neces
 I helped create a program that automatically generates study schedules for various input parameters and restrictions, and lowers time requirements significantly compared to manually created time tables.
 
 ## Project to automate address retrieval from web resources
-**Involved Technologies**: python
+**Involved Technologies**: Python
 
 **Description**:\
 I automated the retrieval of addresses from web resources, which are necessary to keep database contents current. 
@@ -351,7 +351,7 @@ Contains code for both, server and client. The repository contains design specif
 This project was built as final project for a software engineering lecture at ETH.
 
 ## DLSC Projects
-**Involved Technologies**: python, Keras, pyTorch
+**Involved Technologies**: Python, Keras, pyTorch
 
 **Description**:\
 In the context of the Deep Learning in Scientific Computing lecture at ETH, I performed several projects. 
