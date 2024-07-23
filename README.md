@@ -62,6 +62,10 @@ When monitoring stops, the system shuts down automatically.
 
 More information about this system and photo impressions can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), in chapter 4.7.3. 
 
+An impression of some components of the system is shown below. 
+
+<img src="resources/temperatureControl.jpeg" alt="Temperature Control" width="400"/>
+
 # FPGA lock-in amplifier
 **Involved Technologies**: VHDL, signal analysis
 
