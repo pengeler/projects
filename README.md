@@ -293,6 +293,10 @@ I have installed various smart switches and power meters in my home.
 These devices are connected to the network, and controlled via a webinterface hosted on a raspberry pi. 
 A telegram bot functions as secondary interface.
 
+A screenshot of the interface is shown below.
+
+<img src="resources/smartswitch_interface.png" alt="Smartswitch Webinterface" width="400"/>
+
 # Foodweb simulations
 **Involved Technologies**: C++
 
