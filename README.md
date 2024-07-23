@@ -294,7 +294,7 @@ An impression of the wired up system is shown below.
 <img src="resources/switchboard.jpeg" alt="Wellentisch" width="600"/>
 
 # Home automation 
-**Involved Technologies**: Javascript/HTML/CSS (frontent), python (backend)
+**Involved Technologies**: Javascript/HTML/CSS (frontend), python (backend)
 
 **Description**:\
 I have installed various smart switches and power meters in my home. 
