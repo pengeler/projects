@@ -283,7 +283,10 @@ Critical data states also trigger warning messages in a dedicated Element channe
 
 **Description**:\
 Multiplexer that selects from 50 analog channels, used for an acoustics experiment. 
-Used via a python interface, controlled by an arduino.
+Used via a python interface, controlled by an arduino. 
+An impression of the wired up system is shown below. 
+
+<img src="resources/switchboard.jpeg" alt="Wellentisch" width="600"/>
 
 # Home automation 
 **Involved Technologies**: Javascript/HTML/CSS (frontent), python (backend)
