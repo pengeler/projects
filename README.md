@@ -57,7 +57,7 @@ The meshes used to describe various surfaces present in the scene were generated
 
 The obtained results were able to reproduce observations, and guided us in the right direction for the resolution of the encountered issues.
 
-## Software package for automatic topological structure design
+## Structure Search: Automatic topological structure design
 **Involved Technologies**: python, finite elements, CMA-ES
 
 **Description**:\
