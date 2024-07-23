@@ -48,7 +48,7 @@ For timestepping, an RK4 implementation is provided, but custom steppers can be 
 
 
 **Description**:\
-The goal of this project was writing a program that can predict interference patterns seen in a microscope, for certain configurations of deformed overlapping thin films. 
+The goal of this project was writing a program that can predict interference patterns seen when observing a microfabricated sample under a microscope. 
 The motivation of this project was sparked by a lack of understanding of observed results in the cleanroom. 
 
 The ray tracer is parallelized using OpenMP and was run on a cluster (Piz Daint). 
