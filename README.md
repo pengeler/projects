@@ -283,11 +283,16 @@ This data is then visualized in a grafana dashboard.
 
 Critical data states also trigger warning messages in a dedicated Element channel, and effect automatic shutdowns when deemed necessary.
 
-# Experimental data storage in database
+# Foodweb simulations
+**Involved Technologies**: C++
 
-# Foodweb simulations [gitlab](https://gitlab.phys.ethz.ch/engelerp/Foodwebs)
+**Description**\
+Collection of foodweb simulations. This involved numerically solving equations on arbitrary graphs, and investigating when chaotic behaviour becomes stable via bifurcations. 
+The goal was writing a code that could reproduce results reported in a paper, which was achieved.
 
-# Framework for automatic topological structure design
+This project was carried out in the framework of a semester thesis under supervision of Mauro Iazzi and Matthias Troyer.
+
+# Software package for automatic topological structure design
 **Involved Technologies**: python, finite elements, CMA-ES
 
 **Description**:\
@@ -297,9 +302,6 @@ My contribution was developing a custom symmetry preserving mesher, developing t
 
 As this project is yet to be published, code can not be shared. 
 More information can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), chapter 6.
-
-
-# Dynamic friction simulation[]()
 
 # Texas Hold'em probability analysis
 **Involved Technologies**: C++, OpenMP
