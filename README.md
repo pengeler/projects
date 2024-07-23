@@ -342,6 +342,8 @@ Unfortunately the code was lost when Fitbit Studio was shut down, but an impress
 ## Blackjack multiplayer game
 **Involved Technologies**: C++, CMake, wxWidgets, requirements engineering
 
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/blackjack)
+
 **Description**:\
 A multiplayer blackjack game. 
 
