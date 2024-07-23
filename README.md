@@ -247,7 +247,7 @@ An impression of the program is shown in the movie below.
 
 
 **Description**:\
-This tool is used to efficiently adjust MEMS resonator designs, and output them either to AutoCAD for mask generation or SpaceClaim for simulation. 
+This tool is used to efficiently adjust MEMS resonator designs, and output them either to AutoCAD for mask generation or SpaceClaim/Ansys for simulation. 
 The program is geared towards the type of resonator I developed in my PhD thesis, and enabled fast feedback loops when optimizing designs.
 
 An impression of the program is shown below. 
