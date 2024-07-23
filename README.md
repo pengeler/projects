@@ -255,43 +255,6 @@ A multiplayer blackjack game.
 Contains code for both, server and client. The repository contains design specification, requirements specification, and unit tests. 
 This project was built as final project for a software engineering lecture at ETH.
 
-# Home automation 
-**Involved Technologies**: Javascript/HTML/CSS (frontent), python (backend)
-
-**Description**:\
-I have installed various smart switches and power meters in my home. 
-These devices are connected to the network, and controlled via a webinterface hosted on a raspberry pi. 
-A telegram bot functions as secondary interface.
-
-# DLSC Projects
-**Involved Technologies**: python, Keras, pyTorch
-
-**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/dlsc-tasks)
-
-**Description**:\
-In the context of the Deep Learning in Scientific Computing lecture at ETH, I performed several projects. 
-They involved noisy function approximation, time series forecasting, high-dimensional learning, design optimization, PINNs. 
-
-
-# Automatic lab monitoring
-**Involved Technologies**: python, InfluxDB, grafana
-
-**Description**:\
-I have set up automatic data logging and monitoring for the cmt-mm laboratory. 
-This involves periodically connecting to various devices, reading their sensor values, and writing them into an InfluxDB database. 
-This data is then visualized in a grafana dashboard. 
-
-Critical data states also trigger warning messages in a dedicated Element channel, and effect automatic shutdowns when deemed necessary.
-
-# Foodweb simulations
-**Involved Technologies**: C++
-
-**Description**\
-Collection of foodweb simulations. This involved numerically solving equations on arbitrary graphs, and investigating when chaotic behaviour becomes stable via bifurcations. 
-The goal was writing a code that could reproduce results reported in a paper, which was achieved.
-
-This project was carried out in the framework of a semester thesis under supervision of Mauro Iazzi and Matthias Troyer.
-
 # Software package for automatic topological structure design
 **Involved Technologies**: python, finite elements, CMA-ES
 
@@ -303,12 +266,50 @@ My contribution was developing a custom symmetry preserving mesher, developing t
 As this project is yet to be published, code can not be shared. 
 More information can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), chapter 6.
 
-# Texas Hold'em probability analysis
-**Involved Technologies**: C++, OpenMP
+# Automatic lab monitoring
+**Involved Technologies**: python, InfluxDB, grafana
 
 **Description**:\
-CLI program that outputs in real time various statistics about an ongoing game of texas hold'em poker. 
-Most importantly, it shows the user's current winning probability and the strongest possible pocket cards, as determined from the currently available information. 
+I have set up automatic data logging and monitoring for the cmt-mm laboratory. 
+This involves periodically connecting to various devices, reading their sensor values, and writing them into an InfluxDB database. 
+This data is then visualized in a grafana dashboard. 
+
+Critical data states also trigger warning messages in a dedicated Element channel, and effect automatic shutdowns when deemed necessary.
+
+# Switchboard
+**Involved Technologies**: C++, python, PCB design
+
+**Links**: [PCB gitlab](https://gitlab.phys.ethz.ch/engelerp/owli), [Firmware gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_firmware), [Driver gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_driver)
+
+**Description**:\
+Multiplexer that selects from 50 analog channels, used for an acoustics experiment. 
+Used via a python interface, controlled by an arduino.
+
+# Home automation 
+**Involved Technologies**: Javascript/HTML/CSS (frontent), python (backend)
+
+**Description**:\
+I have installed various smart switches and power meters in my home. 
+These devices are connected to the network, and controlled via a webinterface hosted on a raspberry pi. 
+A telegram bot functions as secondary interface.
+
+# Foodweb simulations
+**Involved Technologies**: C++
+
+**Description**\
+Collection of foodweb simulations. This involved numerically solving equations on arbitrary graphs, and investigating when chaotic behaviour becomes stable via bifurcations. 
+The goal was writing a code that could reproduce results reported in a paper, which was achieved.
+
+This project was carried out in the framework of a semester thesis under supervision of Mauro Iazzi and Matthias Troyer.
+
+# DLSC Projects
+**Involved Technologies**: python, Keras, pyTorch
+
+**Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/dlsc-tasks)
+
+**Description**:\
+In the context of the Deep Learning in Scientific Computing lecture at ETH, I performed several projects. 
+They involved noisy function approximation, time series forecasting, high-dimensional learning, design optimization, PINNs. 
 
 # Gameboy emulator
 **Involved Technologies**: C++
@@ -320,14 +321,12 @@ I have started work on a Nintendo Gameboy emulator, to learn how such systems ca
 Currently, it can perform a boot sequence, and execute code read from a cartridge. 
 There is no video or audio output capability as of now.
 
-# Switchboard
-**Involved Technologies**: C++, python, PCB design
-
-**Links**: [PCB gitlab](https://gitlab.phys.ethz.ch/engelerp/owli), [Firmware gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_firmware), [Driver gitlab](https://gitlab.phys.ethz.ch/engelerp/switchboard_driver)
+# Texas Hold'em probability analysis
+**Involved Technologies**: C++, OpenMP
 
 **Description**:\
-Multiplexer that selects from 50 analog channels, used for an acoustics experiment. 
-Used via a python interface, controlled by an arduino.
+CLI program that outputs in real time various statistics about an ongoing game of texas hold'em poker. 
+Most importantly, it shows the user's current winning probability and the strongest possible pocket cards, as determined from the currently available information. 
 
 
 # Project to automate and optimize study planning for sports research []()
@@ -342,5 +341,5 @@ I helped create a program that automatically generates study schedules for vario
 **Involved Technologies**: python
 
 **Description**:\
-I automated the retrieval of addresses from web resources, which are necessary database contents current. 
+I automated the retrieval of addresses from web resources, which are necessary to keep database contents current. 
 Usage of my tool cut the database maintenance time by over 99 %.
