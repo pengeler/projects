@@ -160,7 +160,7 @@ Ringup times, dwell times and ramp speeds are individually programmable.
 This device will be used to measure delicate topology in an elastic sample (designed using the Structure Search project, and microfabricated by me).
 
 ## FPGA defined FM transmitter
-**Involved Technologies**: VHDL, C, embedded systems, telecommunications
+**Involved Technologies**: VHDL
 
 
 **Description**:\
