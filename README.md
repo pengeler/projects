@@ -14,6 +14,7 @@ Due to various restrictions, source access is only provided for selected project
 Wave simulator controlled via a 4K multitouch display in real-time.
 
 Plane waves are propagating over the screen, and users can either scatter the waves off their fingers, place preprogrammed obstruction patterns, or draw their own obstructions directly onto the screen. 
+Up to 12 concurrent touches can be handled.
 
 The finite difference simulation is performed in real time on an RTX 3080, and in operation the system performs well over 10^10 single site updates per second. 
 
