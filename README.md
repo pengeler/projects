@@ -118,25 +118,6 @@ An impression of some components of the system is shown below.
 
 <img src="resources/temperatureControl.jpeg" alt="Temperature Control" width="400"/>
 
-## RBComb control system
-**Involved Technologies**: VHDL, Python
-
-**Link** (partial): [gitlab](https://gitlab.phys.ethz.ch/engelerp/bridge_fpga_ram)
-
-
-**Description**:\
-The control system of the RBComb experiment consists of a star network of 11 FPGAs. 
-The hub receives commands from a PC via UART, and programs the other 10 FPGAs correspondingly. 
-It also receives measurement data from an attocube IDS 3010, stores relevant data in LPDDR SDRAM and streams it back to the PC when requested.
-Each of the other 10 FPGAs generates analog voltages on 576 independent channels, by controlling 72 DACs. 
-In total, the voltages on more than 5000 analog nets are controlled.
-These voltages are generated according to independently programmable sequences, parallelly in well synchronized manner.
-
-The linked repo only shows the gateware flashed on the hub FPGA.
-
-More information about the gateware can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), in the Setup chapter 4, especially 4.5 and 4.6. 
-The Python API to communicate with the system is described in chapter 4.4.
-
 ## FPGA lock-in amplifier
 **Involved Technologies**: VHDL, signal analysis
 
@@ -158,6 +139,25 @@ The extracted cos/sin components for each of the requested frequencies is stored
 Ringup times, dwell times and ramp speeds are individually programmable.
 
 This device will be used to measure delicate topology in an elastic sample (designed using the Structure Search project, and microfabricated by me).
+
+## RBComb control system
+**Involved Technologies**: VHDL, Python
+
+**Link** (partial): [gitlab](https://gitlab.phys.ethz.ch/engelerp/bridge_fpga_ram)
+
+
+**Description**:\
+The control system of the RBComb experiment consists of a star network of 11 FPGAs. 
+The hub receives commands from a PC via UART, and programs the other 10 FPGAs correspondingly. 
+It also receives measurement data from an attocube IDS 3010, stores relevant data in LPDDR SDRAM and streams it back to the PC when requested.
+Each of the other 10 FPGAs generates analog voltages on 576 independent channels, by controlling 72 DACs. 
+In total, the voltages on more than 5000 analog nets are controlled.
+These voltages are generated according to independently programmable sequences, parallelly in well synchronized manner.
+
+The linked repo only shows the gateware flashed on the hub FPGA.
+
+More information about the gateware can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), in the Setup chapter 4, especially 4.5 and 4.6. 
+The Python API to communicate with the system is described in chapter 4.4.
 
 ## FPGA defined FM transmitter
 **Involved Technologies**: VHDL
