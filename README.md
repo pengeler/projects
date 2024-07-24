@@ -317,7 +317,7 @@ I helped create a program that automatically generates study schedules for vario
 
 **Description**:\
 I automated the retrieval of addresses from web resources, which are necessary to keep database contents current. 
-Usage of my tool cut the database maintenance time by over 99 %.
+Usage of my tool cut the database maintenance time by over 90 %.
 
 
 
