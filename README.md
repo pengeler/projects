@@ -301,8 +301,6 @@ Upon request I may prepare a clean version.
 ## PCB generation framework
 **Involved Technologies**: Python
 
-**Link**: [gitlab](https://gitlab.phys.ethz.ch/code/experiment/rbcomb-breakout)
-
 **Description**:\
 Contains classes to represent Kicad pcbs, along with scripts that use these classes to generate different versions of Breakoutboards to break out the 5000 analog nets of the RBComb sample. 
 
