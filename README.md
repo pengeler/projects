@@ -158,6 +158,20 @@ The linked repo only shows the gateware flashed on the hub FPGA.
 More information about the gateware can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), in the Setup chapter 4, especially 4.5 and 4.6. 
 The Python API to communicate with the system is described in chapter 4.4.
 
+## REVLOC — Real-time Engine Vehicle Logger & Onboard Companion
+**Involved Technologies**: PCB design (KiCad), ESP32, embedded systems, power electronics
+
+**Description**:
+REVLOC is a compact, custom-designed 4-layer PCB that logs and streams vehicle telemetry in real time.
+The board integrates an ESP32-WROOM-32E-N8 as the main microcontroller (Wi-Fi & Bluetooth), a Quectel L96-M33 GNSS module for positioning (with integrated or external antenna), an ICM-42688-P 6-DOF IMU (accelerometer + gyroscope), a QMC5883P 3-axis magnetometer for heading, and a BME280 barometric pressure sensor for altitude tracking.
+Sensor data is logged to a microSD card and can be streamed wirelessly to connected clients.
+
+Power is delivered via USB Type-C (with TVS ESD protection) through a custom dual-rail supply: a SY8089A1AAC synchronous buck converter for the main 3.3V rail, and an AP2112K LDO for clean analog power.
+A CR1220 coin cell provides GNSS backup power to preserve almanac and ephemeris data across resets, significantly reducing time-to-first-fix.
+
+The board includes 10 status LEDs (power, GNSS lock, stationary, client connected, UART activity, error, programming), two pushbuttons (reset and boot), and a 6-pin UART header for firmware programming via an FTDI cable.
+All custom footprints and symbols were created from scratch for JLCPCB assembly.
+
 ## FPGA defined FM transmitter
 **Involved Technologies**: VHDL
 
