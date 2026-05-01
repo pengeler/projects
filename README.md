@@ -63,7 +63,7 @@ The obtained results were able to reproduce observations, and guided us in the r
 **Description**:\
 This project constitutes a design suite that has the ability to automatically design topological materials. 
 It is a collaboration of various members from the cmt-mm group. 
-My contribution was developing a custom symmetry preserving mesher, developing the initial functional prototype, and consulting on questions pertaining software design decisions, version control, and optimization. 
+My contribution was developing a custom symmetry preserving mesher, developing the initial functional prototype, and leading the project on software design, version control, and optimization. 
 In operation, the code is run on supercomputers.
 
 As this project is yet to be published, code can not be shared. 
@@ -118,16 +118,14 @@ An impression of some components of the system is shown below.
 
 <img src="resources/temperatureControl.jpeg" alt="Temperature Control" width="400"/>
 
-## FPGA lock-in amplifier
+## FPGA lock-in amplifier STITCH
 **Involved Technologies**: VHDL, signal analysis
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/stitch)
 
 
 **Description**:\
-This project is work in progress. 
-
-It aims to implement FPGA gateware that can:
+In this project I implemented FPGA gateware that can:
 
 - generate excitation signals at frequencies up to 500 kHz
 - receive distance measurements from an attocube IDS3010 interferometric distance measuring system via LVDS-HSSL
@@ -136,9 +134,10 @@ It aims to implement FPGA gateware that can:
 In one shot, up to 1023 programmable frequencies can be measured, and the excitation signal is ramped adiabatically between the different frequencies. 
 The extracted cos/sin components for each of the requested frequencies is stored in BRAM and can be streamed back to the controlling PC.
 
-Ringup times, dwell times and ramp speeds are individually programmable.
+Ringup times, dwell times and ramp speeds are individually programmable via an API. The gateware is deployed on a Numato Saturn (Spartan 6) device.
 
-This device will be used to measure delicate topology in an elastic sample (designed using the Structure Search project, and microfabricated by me).
+This device was successfully used to measure delicate topology in an elastic sample (designed using the Structure Search project, and microfabricated by me).
+It is still in operation in the lab and has reliably delivered correct data since its inception.
 
 ## RBComb control system
 **Involved Technologies**: VHDL, Python
@@ -167,6 +166,14 @@ The Python API to communicate with the system is described in chapter 4.4.
 A system that takes analog audio as input via a phone connector, digitizes the input via an ADC, modulates it onto a carrier and outputs the resulting FM signal on a pin. Even without connecting an antenna to the output, the audio signal can be received with a nearby FM capable radio. The heart of the system is a MAX10 FPGA.
 
 I built this project in the contex of a digital electronics lecture at ETH.
+
+## Blueberry Pi
+**Involved Technologies**: Unix, Python, Raspberry Pi
+
+**Description**:\
+A Blueberry Pi setup can be deployed on a Raspberry Pi, and then facilitates UART via ethernet. The Blueberry Pi receives payload via TCP, and forwards it to the target device via serial port (and vice versa).
+
+This is deployed in the lab to control UART-only devices via ethernet.
 
 ## Spartan Sound
 **Involved Technologies**: VHDL, Python, electronics
