@@ -66,7 +66,6 @@ It is a collaboration of various members from the cmt-mm group.
 My contribution was developing a custom symmetry preserving mesher, developing the initial functional prototype, and leading the project on software design, version control, and optimization. 
 In operation, the code is run on supercomputers.
 
-As this project is yet to be published, code can not be shared. 
 More information can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), chapter 6.
 
 ## Texas Hold'em probability analysis
