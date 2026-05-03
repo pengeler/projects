@@ -21,7 +21,7 @@ Up to 12 concurrent touches can be handled.
 
 The finite difference simulation is performed in real time on an RTX 3080, and in operation the system performs well over 10^10 single site updates per second. 
 
-This system is an exhibit part of the "Wellen - Tauch ein!" exhibition from FocusTerra, which has since also been shown in the Seemuseum Kreuzlingen, and is currently in the HNF Paderborn. 
+This system is part of FocusTerra's touring "Wellen - Tauch ein!" exhibition, which has been shown at Seemuseum Kreuzlingen and HNF Paderborn, and is currently (since 2025) at the Carl Bosch Museum Heidelberg. 
 
 More in-depth information can be found in the linked gitlab's README.md, and an impression of the final device is shown below.
 
@@ -63,7 +63,7 @@ The obtained results were able to reproduce observations, and guided us in the r
 **Description**:\
 This project constitutes a design suite that has the ability to automatically design topological materials. 
 It is a collaboration of various members from the cmt-mm group. 
-My contribution was developing a custom symmetry preserving mesher, developing the initial functional prototype, and consulting on questions pertaining software design decisions, version control, and optimization. 
+My contribution was developing a custom symmetry preserving mesher, developing the initial functional prototype, and leading the project on software design, version control, and optimization. 
 In operation, the code is run on supercomputers.
 
 As this project is yet to be published, code can not be shared. 
@@ -93,6 +93,28 @@ This project was carried out in the framework of a semester thesis under supervi
 
 # Hardware / Gateware / Embedded
 
+## TIQI Signal Pre-conditioning PCB & Zynq-7000 XADC
+**Involved Technologies**: PCB design, mixed-signal electronics, embedded C++, Zynq-7000, Xilinx Vivado
+
+**Description**:\
+Carried out in summer 2017 as a Scientific Assistant in the Trapped Ion Quantum Information Group (ETH D-PHYS), supervised by Vlad Negnevitsky.
+The goal was to enable real-time laser intensity monitoring for trapped ion qubit control, using the XADC available on the Zedboard's Zynq-7000 SoC.
+
+**Signal pre-conditioning PCB:**\
+Designed, prototyped (on breadboard through multiple design-test iterations) and manufactured a custom 4-layer mixed-signal PCB that conditions up to 4 photodiode channels for the XADC:
+- **Input stage**: 4× THS4521 fully differential amplifiers (145 MHz BW, 490 V/µs slew rate) — each channel is buffered, amplified to the XADC input range (0–1 V), low-pass filtered (1 MHz anti-aliasing cutoff), and can optionally level-shift the signal into the allowed range
+- **Multiplexer**: ADG709 dual 4-to-1 analog multiplexer (55 MHz BW, low on-resistance) — channel selection controlled via Zedboard XADC header GPIO
+- **Output stage**: Second THS4521 stage reduces common-mode voltage to XADC-compliant levels
+- 4-layer stackup with dedicated ground and power planes; all components decoupled with multi-value bypass capacitors; power drawn from the 5 V XADC header rail; board-to-board connection via ribbon cable to Zedboard XADC header
+
+**Zynq-7000 XADC knowledge discovery:**\
+Characterized the XADC in detail (noise, drift, sampling speed, conversion accuracy) and documented all relevant operating modes:
+- Sequential, continuous, event-driven, and external multiplexer modes
+- Embedded C++ programming using the Xilinx XADC (XAdcPs) and GIC (XScuGic) drivers
+- PL→PS interrupt system: full GIC setup, interrupt handler registration, and data collection via interrupt-driven event mode
+
+This project produced an internal technical report and left the lab with a working PCB and a comprehensive reference document for future XADC users.
+
 ## Autonomous temperature stabilization system
 **Involved Technologies**: C++, Python, mixed-signal PCB design, electronics, PID
 
@@ -118,16 +140,14 @@ An impression of some components of the system is shown below.
 
 <img src="resources/temperatureControl.jpeg" alt="Temperature Control" width="400"/>
 
-## FPGA lock-in amplifier
+## FPGA lock-in amplifier STITCH
 **Involved Technologies**: VHDL, signal analysis
 
 **Link**: [gitlab](https://gitlab.phys.ethz.ch/engelerp/stitch)
 
 
 **Description**:\
-This project is work in progress. 
-
-It aims to implement FPGA gateware that can:
+In this project I implemented FPGA gateware that can:
 
 - generate excitation signals at frequencies up to 500 kHz
 - receive distance measurements from an attocube IDS3010 interferometric distance measuring system via LVDS-HSSL
@@ -136,9 +156,10 @@ It aims to implement FPGA gateware that can:
 In one shot, up to 1023 programmable frequencies can be measured, and the excitation signal is ramped adiabatically between the different frequencies. 
 The extracted cos/sin components for each of the requested frequencies is stored in BRAM and can be streamed back to the controlling PC.
 
-Ringup times, dwell times and ramp speeds are individually programmable.
+Ringup times, dwell times and ramp speeds are individually programmable via an API. The gateware is deployed on a Numato Saturn (Spartan 6) device.
 
-This device will be used to measure delicate topology in an elastic sample (designed using the Structure Search project, and microfabricated by me).
+This device was successfully used to measure delicate topology in an elastic sample (designed using the Structure Search project, and microfabricated by me).
+It is still in operation in the lab and has reliably delivered correct data since its inception.
 
 ## RBComb control system
 **Involved Technologies**: VHDL, Python
@@ -159,6 +180,20 @@ The linked repo only shows the gateware flashed on the hub FPGA.
 More information about the gateware can be found [in my PhD thesis](https://doi.org/10.3929/ethz-b-000678922), in the Setup chapter 4, especially 4.5 and 4.6. 
 The Python API to communicate with the system is described in chapter 4.4.
 
+## REVLOC — Real-time Engine Vehicle Logger & Onboard Companion
+**Involved Technologies**: PCB design (KiCad), ESP32, embedded systems, power electronics
+
+**Description**:
+REVLOC is a compact, custom-designed 4-layer PCB that logs and streams vehicle telemetry in real time.
+The board integrates an ESP32-WROOM-32E-N8 as the main microcontroller (Wi-Fi & Bluetooth), a Quectel L96-M33 GNSS module for positioning (with integrated or external antenna), an ICM-42688-P 6-DOF IMU (accelerometer + gyroscope), a QMC5883P 3-axis magnetometer for heading, and a BME280 barometric pressure sensor for altitude tracking.
+Sensor data is logged to a microSD card and can be streamed wirelessly to connected clients.
+
+Power is delivered via USB Type-C (with TVS ESD protection) through a custom dual-rail supply: a SY8089A1AAC synchronous buck converter for the main 3.3V rail, and an AP2112K LDO for clean analog power.
+A CR1220 coin cell provides GNSS backup power to preserve almanac and ephemeris data across resets, significantly reducing time-to-first-fix.
+
+The board includes 10 status LEDs (power, GNSS lock, stationary, client connected, UART activity, error, programming), two pushbuttons (reset and boot), and a 6-pin UART header for firmware programming via an FTDI cable.
+All custom footprints and symbols were created from scratch for JLCPCB assembly.
+
 ## FPGA defined FM transmitter
 **Involved Technologies**: VHDL
 
@@ -167,6 +202,14 @@ The Python API to communicate with the system is described in chapter 4.4.
 A system that takes analog audio as input via a phone connector, digitizes the input via an ADC, modulates it onto a carrier and outputs the resulting FM signal on a pin. Even without connecting an antenna to the output, the audio signal can be received with a nearby FM capable radio. The heart of the system is a MAX10 FPGA.
 
 I built this project in the contex of a digital electronics lecture at ETH.
+
+## Blueberry Pi
+**Involved Technologies**: Unix, Python, Raspberry Pi
+
+**Description**:\
+A Blueberry Pi setup can be deployed on a Raspberry Pi, and then facilitates UART via ethernet. The Blueberry Pi receives payload via TCP, and forwards it to the target device via serial port (and vice versa).
+
+This is deployed in the lab to control UART-only devices via ethernet.
 
 ## Spartan Sound
 **Involved Technologies**: VHDL, Python, electronics
@@ -253,6 +296,22 @@ The program is geared towards the type of resonator I developed in my PhD thesis
 An impression of the program is shown below. 
 
 ![ArmDesigner](resources/armDesigner.mp4)
+
+## Zurich Parking Map (woparky.com)
+**Involved Technologies**: Go, Angular 21, TypeScript, Leaflet, leaflet.markercluster, RxJS, SCSS
+
+**Link**: [woparky.com](https://www.woparky.com/)
+
+**Description**:\
+Real-time parking availability map for the City of Zurich. Shows ~46,000 street parking spaces and ~136 parking garages (Parkhäuser) with live occupancy data from the city's Parkleitsystem.
+
+The Go backend (stdlib only, no framework) loads static city GeoJSON on startup, then polls the PLS Zürich RSS feed every 60 seconds, merging live free-space counts and status (open/closed) into an in-memory store protected by a sync.RWMutex. A single REST endpoint serves the merged dataset.
+
+The Angular 21 frontend renders the map using Leaflet. ~46,000 street parking spaces are clustered via leaflet.markercluster (visible at zoom ≥ 16). The ~136 garages are shown as color-coded circle markers (green/orange/red/grey by availability ratio), updating every 60 s via RxJS polling. A proxy configuration forwards all `/api/*` calls to the Go backend during development.
+
+Deployed on a Hetzner VPS. Data sources: Stadt Zürich Open Data (GeoJSON, CC-0), PLS Zürich RSS feed (CC-0).
+
+<img src="resources/woparky_screenshot.png" alt="woparky.com — Zurich Parking Map" width="800"/>
 
 ## Home automation 
 **Involved Technologies**: Javascript/HTML/CSS (frontend), Python (backend)
