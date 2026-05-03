@@ -5,7 +5,42 @@ But it should be noted that most projects belong to several of these groups.
 
 Due to various restrictions, source access is only provided for selected projects. I might be able to supply access to other projects on demand.
 
-[TOC]
+# Table of Contents
+- [High Performance](#high-performance)
+  - [Wave simulator](#wave-simulator)
+  - [Simulation framework for system of thousands of coupled resonators](#simulation-framework-for-system-of-thousands-of-coupled-resonators)
+  - [High performance interference ray tracer](#high-performance-interference-ray-tracer)
+  - [Structure Search: Automatic topological structure design](#structure-search-automatic-topological-structure-design)
+  - [Texas Hold'em probability analysis](#texas-holdem-probability-analysis)
+  - [Foodweb simulations](#foodweb-simulations)
+- [Hardware / Gateware / Embedded](#hardware--gateware--embedded)
+  - [TIQI Signal Pre-conditioning PCB & Zynq-7000 XADC](#tiqi-signal-pre-conditioning-pcb--zynq-7000-xadc)
+  - [Autonomous temperature stabilization system](#autonomous-temperature-stabilization-system)
+  - [FPGA lock-in amplifier STITCH](#fpga-lock-in-amplifier-stitch)
+  - [RBComb control system](#rbcomb-control-system)
+  - [REVLOC — Real-time Engine Vehicle Logger & Onboard Companion](#revloc--real-time-engine-vehicle-logger--onboard-companion)
+  - [FPGA defined FM transmitter](#fpga-defined-fm-transmitter)
+  - [Blueberry Pi](#blueberry-pi)
+  - [Spartan Sound](#spartan-sound)
+  - [Switchboard](#switchboard)
+- [Utility](#utility)
+  - [Interactive WLI data analyzer and visualizer](#interactive-wli-data-analyzer-and-visualizer)
+  - [RBComb sample visualizer](#rbcomb-sample-visualizer)
+  - [Interactive MEMS resonator design optimizer](#interactive-mems-resonator-design-optimizer)
+  - [Zurich Parking Map (woparky.com)](#zurich-parking-map-woparkycom)
+  - [Home automation](#home-automation)
+  - [Automatic lab monitoring](#automatic-lab-monitoring)
+  - [Git diff](#git-diff)
+  - [Labbook generator](#labbook-generator)
+  - [PCB generation framework](#pcb-generation-framework)
+  - [Project to automate and optimize study planning for sports research](#project-to-automate-and-optimize-study-planning-for-sports-research)
+  - [Project to automate address retrieval from web resources](#project-to-automate-address-retrieval-from-web-resources)
+- [Other](#other)
+  - [Fitbit watchface](#fitbit-watchface)
+  - [Blackjack multiplayer game](#blackjack-multiplayer-game)
+  - [DLSC Projects](#dlsc-projects)
+  - [Gameboy emulator](#gameboy-emulator)
+
 # High Performance
 
 ## Wave simulator
